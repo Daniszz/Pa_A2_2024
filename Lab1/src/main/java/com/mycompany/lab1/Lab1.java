@@ -107,5 +107,14 @@ public class Lab1 {
             }
             System.out.println();
         }
+        int cicluri=1;
+        // Deorece avem un wheel graph, o sa avem n-1 noduri conectate la un nod central de grad n-1, numarul de posibilitati ale ciclurilor este combinari de n-1 luate cate 2.
+        cicluri=cicluri +  (n-1)*(n-2);
+        System.out.println("Numarul de cicluri este :" + cicluri);
+        int expected=n*n-3*n+3;
+        System.out.println("Numarul asteptat de cicluri: " + expected);
+        
+
     }
+    
 }

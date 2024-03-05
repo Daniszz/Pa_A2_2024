@@ -53,16 +53,19 @@ public class Lab1 {
         inceputInterval = Integer.parseInt(args[0]);
         sfarsitInterval = Integer.parseInt(args[1]);
         k = Integer.parseInt(args[2]);
+
         if (inceputInterval > sfarsitInterval) {
             System.out.println("Interval invalid");
             System.exit(-1);
         }
+
         String rezultat = "";
         for (int i = inceputInterval; i <= sfarsitInterval; i++) {
             if (verificareKRed(i, k)) {
                 rezultat = rezultat + Integer.toString(i) + " ";
             }
         }
+
         long endTime = System.nanoTime();
         long duration = endTime - startTime;
         System.out.println("Rezultatul este: " + rezultat);
@@ -85,36 +88,33 @@ public class Lab1 {
 
     void bonus() {
         Random rand = new Random();
-        int n = rand.nextInt((20-7)+1)+7;
+        int n = rand.nextInt((15 - 7) + 1) + 7;
         int[][] matrice = new int[n][n];
-        for(int i=1;i<n;i++)
-        {
-            matrice[0][i]=1;
-            matrice[i][0]=1;
+        for (int i = 1; i < n; i++) {
+            matrice[0][i] = 1;
+            matrice[i][0] = 1;
         }
-        for(int i=1;i<n-1;i++)
-        {
-            matrice[i][i+1]=1;
-            matrice[i+1][i]=1;
+        for (int i = 1; i < n - 1; i++) {
+            matrice[i][i + 1] = 1;
+            matrice[i + 1][i] = 1;
         }
-        matrice[n-1][1]=1;
-        matrice[1][n-1]=1;
-            
-        System.out.println("Matricea adiacenta pentru W"+n+":");
+        matrice[n - 1][1] = 1;
+        matrice[1][n - 1] = 1;
+
+        System.out.println("Matricea adiacenta pentru W" + n + ":");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(matrice[i][j] + " ");
             }
             System.out.println();
         }
-        int cicluri=1;
+        int cicluri = 1;
         // Deorece avem un wheel graph, o sa avem n-1 noduri conectate la un nod central de grad n-1, numarul de posibilitati ale ciclurilor este combinari de n-1 luate cate 2.
-        cicluri=cicluri +  (n-1)*(n-2);
+        cicluri = cicluri + (n - 1) * (n - 2);
         System.out.println("Numarul de cicluri este :" + cicluri);
-        int expected=n*n-3*n+3;
+        int expected = n * n - 3 * n + 3;
         System.out.println("Numarul asteptat de cicluri: " + expected);
-        
 
     }
-    
+
 }

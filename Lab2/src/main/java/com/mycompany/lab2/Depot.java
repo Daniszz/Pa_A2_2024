@@ -18,26 +18,53 @@ public class Depot {
     private String name;
     private Vehicle[] vehicles;
 
+    /**
+     *
+     * @param name
+     */
     public Depot(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
+
+    /**
+     *
+     * @param vehicles
+     */
     public void setVehicles(Vehicle... vehicles) {
         this.vehicles = vehicles;
         for (Vehicle v : vehicles) {
             v.setDepot(this);
         }
     }
-  public Vehicle[] getVehicles() {
+
+    /**
+     *
+     * @return
+     */
+    public Vehicle[] getVehicles() {
         return vehicles;
     }
+
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -45,6 +72,11 @@ public class Depot {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -60,6 +92,10 @@ public class Depot {
         return Objects.equals(this.name, other.name);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Depot{" + "name=" + name + '}';

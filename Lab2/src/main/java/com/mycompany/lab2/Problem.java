@@ -23,27 +23,46 @@ public class Problem {
     private Depot[] depots;
     private Client[] clients;
 
+    /**
+     *
+     * @param depots
+     * @param clients
+     */
     public Problem(Depot[] depots, Client[] clients) {
         this.depots = depots;
         this.clients = clients;
     }
 
-    Problem() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
 
+    /**
+     *
+     * @param clients
+     */
     public void setClients(Client[] clients) {
         this.clients = clients;
     }
 
+    /**
+     *
+     * @param depots
+     */
     public void setDepots(Depot[] depots) {
         this.depots = depots;
     }
 
+    /**
+     *
+     * @return
+     */
     public Client[] getClients() {
         return clients;
     }
 
+    /**
+     *
+     * @return
+     */
     public Depot[] getDepots() {
         return depots;
     }

@@ -20,19 +20,39 @@ public class Client {
     private LocalTime minTime;
     private LocalTime maxTime;
 
+    /**
+     *
+     */
     public Client() {
     }
 
+    /**
+     *
+     * @param name
+     */
     public Client(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @param name
+     * @param minTime
+     * @param maxTime
+     */
     public Client(String name, LocalTime minTime, LocalTime maxTime) {
         this.name = name;
         this.minTime = minTime;
         this.maxTime = maxTime;
     }
 
+    /**
+     *
+     * @param name
+     * @param type
+     * @param minTime
+     * @param maxTime
+     */
     public Client(String name, ClientType type, LocalTime minTime, LocalTime maxTime) {
         this.name = name;
         this.type = type;
@@ -40,43 +60,83 @@ public class Client {
         this.maxTime = maxTime;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public LocalTime getMaxTime() {
         return maxTime;
     }
 
+    /**
+     *
+     * @param maxTime
+     */
     public void setMaxTime(LocalTime maxTime) {
         this.maxTime = maxTime;
     }
 
+    /**
+     *
+     * @return
+     */
     public LocalTime getMinTime() {
         return minTime;
     }
 
+    /**
+     *
+     * @param minTime
+     */
     public void setMinTime(LocalTime minTime) {
         this.minTime = minTime;
     }
 
+    /**
+     *
+     * @return
+     */
     public ClientType getType() {
         return type;
     }
 
+    /**
+     *
+     * @param type
+     */
     public void setType(ClientType type) {
         this.type = type;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Client{" + "name=" + name + ", type=" + type + ", minTime=" + minTime + ", maxTime=" + maxTime + '}';
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 5;
@@ -87,6 +147,11 @@ public class Client {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

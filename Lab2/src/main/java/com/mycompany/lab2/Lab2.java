@@ -14,7 +14,11 @@ import java.time.LocalTime;
 
 public class Lab2 {
 
-   public static void main(String[] args) {
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
 Depot depot1 = new Depot("Depot 1");
         Depot depot2 = new Depot("Depot 2");
 
@@ -30,6 +34,7 @@ Depot depot1 = new Depot("Depot 1");
 
         Vehicle[] allVehicles = problem.getVehicles();
 
+        
         System.out.println("All Vehicles:");
         for (Vehicle vehicle : allVehicles) {
             System.out.println(vehicle);

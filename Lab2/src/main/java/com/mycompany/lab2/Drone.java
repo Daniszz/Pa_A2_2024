@@ -14,25 +14,48 @@ Represents a drone, a type of vehicle.*/
 public class Drone extends Vehicle{
     private int maxFlightDuration;
 
+    /**
+     *
+     * @param name
+     * @param maxFlightDuration
+     */
     public Drone(String name, int maxFlightDuration) {
         super(name);
         this.maxFlightDuration = maxFlightDuration;
     }
 
+    /**
+     *
+     * @param name
+     * @param depot
+     * @param maxFlightDuration
+     */
     public Drone(String name, Depot depot, int maxFlightDuration) {
         super(name, depot);
         this.maxFlightDuration = maxFlightDuration;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getMaxFlightDuration() {
         return maxFlightDuration;
     }
 
+    /**
+     *
+     * @param maxFlightDuration
+     */
     public void setMaxFlightDuration(int maxFlightDuration) {
         this.maxFlightDuration = maxFlightDuration;
     }
 
-   @Override
+    /**
+     *
+     * @return
+     */
+    @Override
     public String toString() {
         return "Drone{" +
                 "name= " + getName() + ' ' +

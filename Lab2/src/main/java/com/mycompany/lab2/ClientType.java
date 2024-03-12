@@ -9,6 +9,14 @@ package com.mycompany.lab2;
  * @author danis
  */
 public  enum ClientType {
+
+    /**
+     *
+     */
     REGULAR,
+
+    /**
+     *
+     */
     PREMIUM
 }

@@ -5,6 +5,8 @@
 package com.mycompany.lab3;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -14,23 +16,43 @@ import java.util.Map;
 public class Concert
 extends Attraction
 implements Visitable, Payable {
- private Map<LocalDate, TimeInterval> timetable;
- private double ticketPrice;
+private Map<LocalDate, Pair<LocalTime, LocalTime>> timetable = new HashMap<>();
+    private double ticketPrice;
 
-    public Concert(String name) {
+    /**
+     *
+     * @param name
+     * @param ticketPrice
+     */
+    public Concert(String name, double ticketPrice) {
         super(name);
+        this.ticketPrice = ticketPrice;
     }
- @Override
- public Map<LocalDate,TimeInterval> getTimetable() {
- return timetable;
- }
- public void setTimetable(Map<LocalDate, TimeInterval> timetable) {
- this.timetable = timetable;
- }
- @Override
- public double getTicketPrice() {
- return ticketPrice;
- }
 
+    /**
+     *
+     * @return
+     */
+    @Override
+    public Map<LocalDate, Pair<LocalTime, LocalTime>> getTimetable() {
+        return timetable;
+    }
+
+    /**
+     *
+     * @param timetable
+     */
+    public void setTimetable(Map<LocalDate, Pair<LocalTime, LocalTime>> timetable) {
+        this.timetable = timetable;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public double getTicketPrice() {
+        return ticketPrice;
+    }
   
 }

@@ -1,11 +1,13 @@
 com\mycompany\lab3\Concert.class
 com\mycompany\lab3\Payable.class
-com\mycompany\lab3\Church.class
 com\mycompany\lab3\Statue.class
 com\mycompany\lab3\Lab3.class
+com\mycompany\lab3\TravelPlan.class
 com\mycompany\lab3\Attraction.class
+com\mycompany\lab3\Pair.class
+TimeInterval.class
+com\mycompany\lab3\Church.class
 com\mycompany\lab3\TimeInterval.class
 com\mycompany\lab3\Trip.class
-TimeInterval.class
 com\mycompany\lab3\NewClass.class
 com\mycompany\lab3\Visitable.class

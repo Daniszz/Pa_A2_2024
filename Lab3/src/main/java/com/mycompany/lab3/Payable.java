@@ -9,6 +9,11 @@ package com.mycompany.lab3;
  * @author danis
  */
 public interface Payable {
- double getTicketPrice();
+
+    /**
+     *
+     * @return
+     */
+    double getTicketPrice();
 }
 

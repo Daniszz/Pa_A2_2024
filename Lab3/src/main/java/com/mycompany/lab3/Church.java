@@ -5,6 +5,8 @@
 package com.mycompany.lab3;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -13,27 +15,32 @@ import java.util.Map;
  */
 public class Church 
         extends Attraction
-implements Visitable, Payable {
- private Map<LocalDate, TimeInterval> timetable;
- private double ticketPrice;
+implements Visitable {
+  private Map<LocalDate, Pair<LocalTime, LocalTime>> timetable = new HashMap<>();
 
+    /**
+     *
+     * @param name
+     */
     public Church(String name) {
         super(name);
     }
- @Override
- public Map<LocalDate,TimeInterval> getTimetable() {
- return timetable;
- }
- public void setTimetable(Map<LocalDate, TimeInterval> timetable) {
- this.timetable = timetable;
- }
- @Override
- public double getTicketPrice() {
- return ticketPrice;
- }
 
-    void setTicketPrice(double d) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    /**
+     *
+     * @return
+     */
+    @Override
+    public Map<LocalDate, Pair<LocalTime, LocalTime>> getTimetable() {
+        return timetable;
     }
-    
+
+    /**
+     *
+     * @param timetable
+     */
+    public void setTimetable(Map<LocalDate, Pair<LocalTime, LocalTime>> timetable) {
+        this.timetable = timetable;
+    }
 }
+

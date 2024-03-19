@@ -10,7 +10,7 @@ package com.mycompany.lab3;
  */
 abstract class Attraction implements Comparable<Attraction> {
     protected String name;
-
+    
     public Attraction(String name) {
         this.name = name;
     }

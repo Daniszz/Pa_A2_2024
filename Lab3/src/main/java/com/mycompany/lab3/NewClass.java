@@ -4,20 +4,10 @@
  */
 package com.mycompany.lab3;
 
-
-
 /**
  *
  * @author danis
  */
-public class Statue 
-    extends Attraction {
-
-    /**
-     *
-     * @param name
-     */
-    public Statue(String name) {
-        super(name);
-    }
+public class NewClass {
+    
 }

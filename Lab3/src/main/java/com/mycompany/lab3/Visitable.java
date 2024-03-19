@@ -6,17 +6,33 @@ package com.mycompany.lab3;
 import java.time.LocalTime;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
  *
  * @author danis
+ * @param <T>
  */
-public interface Visitable {
-Map<LocalDate, TimeInterval> getTimetable();
-    default TimeInterval getOpeningHour(LocalDate date) {
-        Map<LocalDate, TimeInterval> timetable = getTimetable();
-        return timetable.getOrDefault(date, TimeInterval.CLOSED);
+public interface Visitable<T extends Comparable<T>> {
+
+    /**
+     *
+     * @return
+     */
+    Map<LocalDate, Pair<T, T>> getTimetable();
+
+    /**
+     *
+     * @param date
+     * @return
+     */
+    default LocalTime getOpeningHour(LocalDate date) {
+        Map<LocalDate, Pair<T, T>> timetable = getTimetable();
+        if (timetable.containsKey(date)) {
+            return (LocalTime) timetable.get(date).getKey();
+        }
+        return null;
     }
 }
 

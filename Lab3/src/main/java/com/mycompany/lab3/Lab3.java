@@ -5,7 +5,7 @@
 package com.mycompany.lab3;
 
 import java.time.LocalDate;
-import java.util.HashMap;
+import java.time.LocalTime;
 import java.util.Map;
 
 /**
@@ -14,33 +14,33 @@ import java.util.Map;
  */
 public class Lab3 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
- Concert concert = new Concert("Music Festival");
-        concert.setTimetable(createTimetable());
+Trip trip = new Trip("CityX", LocalDate.of(2024, 3, 1), LocalDate.of(2024, 3, 10));
 
-        Statue statue = new Statue("Statue of Liberty");
-        statue.setTimetable(createTimetable());
+        Statue statue = new Statue("Statuie");
+        Church church = new Church("Biserica");
+        Concert concert = new Concert("Music Festival", 50.0);
 
-        Church church = new Church("St. Peter's Basilica");
-        church.setTimetable(createTimetable());
+        church.setTimetable(Map.of(LocalDate.of(2024, 3, 1), new Pair<>(LocalTime.of(9, 0), LocalTime.of(17, 0))));
+        concert.setTimetable(Map.of(LocalDate.of(2024, 3, 2), new Pair<>(LocalTime.of(10, 0), LocalTime.of(22, 0))));
 
-        LocalDate startDate = LocalDate.of(2024, 7, 1);
-        LocalDate endDate = LocalDate.of(2024, 7, 10);
-        Trip trip = new Trip("New York City", startDate, endDate);
-
-        trip.addAttraction(concert);
         trip.addAttraction(statue);
         trip.addAttraction(church);
+        trip.addAttraction(concert);
 
-        System.out.println(trip);
+        trip.displayVisitableNotPayable();
+
+        TravelPlan travelPlan = new TravelPlan();
+        travelPlan.addPlan(statue, LocalDate.of(2024, 3, 1));
+        travelPlan.addPlan(church, LocalDate.of(2024, 3, 2));
+        travelPlan.addPlan(concert, LocalDate.of(2024, 3, 3));
+
+        travelPlan.printPlan();
     }
-
-    private static Map<LocalDate, TimeInterval> createTimetable() {
-        Map<LocalDate, TimeInterval> timetable = new HashMap<>();
-        timetable.put(LocalDate.of(2024, 7, 2), TimeInterval.MORNING);
-        timetable.put(LocalDate.of(2024, 7, 4), TimeInterval.AFTERNOON);
-        timetable.put(LocalDate.of(2024, 7, 6), TimeInterval.EVENING);
-        return timetable;
     }
 
 
@@ -51,4 +51,4 @@ public class Lab3 {
 
     
 
-}
+

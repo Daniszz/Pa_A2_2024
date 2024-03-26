@@ -13,24 +13,46 @@ public class Person {
     private int age;
     private String destination;
 
+    /**
+     *
+     * @param name
+     * @param age
+     * @param destination
+     */
     public Person(String name, int age, String destination) {
         this.name = name;
         this.age = age;
         this.destination = destination;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getAge() {
         return age;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDestination() {
         return destination;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Person{" +

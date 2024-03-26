@@ -1,0 +1,52 @@
+@options
+@packages
+-classpath
+'C:/Users/hritc/.m2/repository/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar;C:/Users/hritc/.m2/repository/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar;C:/Users/hritc/.m2/repository/org/yaml/snakeyaml/1.23/snakeyaml-1.23-android.jar;C:/Users/hritc/.m2/repository/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar;C:/Users/hritc/.m2/repository/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'21'
+-sourcepath
+'C:/Users/hritc/OneDrive/Documents/NetBeansProjects/Lab4/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/hritc/OneDrive/Documents/NetBeansProjects/Lab4/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Lab4 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Lab4 1.0-SNAPSHOT API'
+com.mycompany.lab4
+C:\Users\hritc\.m2\repository\com\github\javafaker\javafaker\1.0.2\javafaker-1.0.2.jar = 1711438310470
+C:\Users\hritc\.m2\repository\org\apache\commons\commons-lang3\3.5\commons-lang3-3.5.jar = 1711438310892
+C:\Users\hritc\.m2\repository\org\yaml\snakeyaml\1.23\snakeyaml-1.23-android.jar = 1711438311064
+C:\Users\hritc\.m2\repository\com\github\mifmif\generex\1.0.2\generex-1.0.2.jar = 1711438310799
+C:\Users\hritc\.m2\repository\dk\brics\automaton\automaton\1.11-8\automaton-1.11-8.jar = 1711438310972
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\src\main\java = 1710844147454
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\allclasses-index.html = 1711447899697
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\allpackages-index.html = 1711447899702
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\copy.svg = 1711447899760
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\element-list = 1711447899597
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\help-doc.html = 1711447899749
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\index-all.html = 1711447899734
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\index.html = 1711447899742
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\link.svg = 1711447899762
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\member-search-index.js = 1711447899710
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\module-search-index.js = 1711447899704
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\overview-tree.html = 1711447899675
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\package-search-index.js = 1711447899706
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\script.js = 1711447899757
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\search-page.js = 1711447899771
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\search.html = 1711447899738
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\search.js = 1711447899767
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\stylesheet.css = 1711447899754
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\tag-search-index.js = 1711447899712
+C:\Users\hritc\OneDrive\Documents\NetBeansProjects\Lab4\target\site\apidocs\type-search-index.js = 1711447899708

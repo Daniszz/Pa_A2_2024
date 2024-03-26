@@ -21,24 +21,32 @@ public class Repository {
             throw new InvalidRepositoryException(new Exception("Invalid master directory path."));
         }
 
-        File[] persoane = masterDir.listFiles(File::isDirectory);
-        if (persoane == null) {
+        File[] personDirs = masterDir.listFiles(File::isDirectory);
+        if (personDirs == null) {
             throw new InvalidRepositoryException(new Exception("No person directories found in the master directory."));
         }
 
-        for (File persoana : persoane) {
-            int id;
-            String name = persoana.getName(); 
-            try {
-                id = Integer.parseInt(name); 
-            } catch (NumberFormatException e) {
-                System.err.println("Invalid person directory name: " + name);
+        for (File personDir : personDirs) {
+            String dirName = personDir.getName();
+            String[] parts = dirName.split(", "); 
+            if (parts.length != 2) {
+                System.err.println("Invalid person directory name format: " + dirName);
                 continue;
             }
 
-            File[] files = persoana.listFiles();
+            int id;
+            String name;
+            try {
+                id = Integer.parseInt(parts[1]);
+                name = parts[0];
+            } catch (NumberFormatException e) {
+                System.err.println("Invalid person ID in directory: " + dirName);
+                continue;
+            }
+
+            File[] files = personDir.listFiles();
             if (files == null) {
-                System.err.println("No files found in the person directory: " + name);
+                System.err.println("No files found in the person directory: " + dirName);
                 continue;
             }
 

@@ -11,10 +11,10 @@ package com.mycompany.lab5;
 public class Lab5 {
 
     public static void main(String[] args){
-try {
+ try {
             Repository repository = new Repository("C:\\Users\\hritc\\OneDrive\\Documents\\GitHub\\Pa_A2_2024\\lab5\\src\\master directory");
-
-            repository.displayRepositoryContents();
+            CommandExecutor executor = new CommandExecutor(repository);
+            executor.start();
         } catch (InvalidRepositoryException e) {
             System.err.println("Error: " + e.getMessage());
         }

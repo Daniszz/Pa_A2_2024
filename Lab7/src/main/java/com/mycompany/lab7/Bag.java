@@ -13,29 +13,33 @@ import org.example.util.Token;
  *
  * @author danis
  */
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import java.util.Collections;
+import java.util.Stack;
+
 public class Bag {
- private final List<Token> bag;
+    private final Stack<Token> tokens = new Stack<>();
 
-    public Bag() {
-        this.bag = new ArrayList<>();
-
-        Random random = new Random();
-        for (int i = 0; i < 4; i++)
-        {
-            int randomInt = random.nextInt(12);
-            this.bag.add(new Token(randomInt,randomInt+1));
+    public Bag(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (i != j) {
+                    tokens.add(new Token(i, j));
+                    tokens.add(new Token(j, i)); 
+                }
+            }
         }
-    }
-  public synchronized Token extractToken() {
-  Token extractedToken = this.bag.get(0);
-  this.bag.remove(0);
-  return extractedToken;
-}
-    public List<Token> getBag() {
-        return this.bag;
+        Collections.shuffle(tokens);
     }
 
-    public boolean isEmptyBag() {
-        return this.bag.isEmpty();
+    public synchronized Token extractToken() {
+        return tokens.isEmpty() ? null : tokens.pop();
+    }
+
+    public synchronized boolean isEmpty() {
+        return tokens.isEmpty();
     }
 }

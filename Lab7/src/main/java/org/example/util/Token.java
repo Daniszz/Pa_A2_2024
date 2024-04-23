@@ -1,13 +1,28 @@
 package org.example.util;
 
-public class Token extends Pair<Integer,Integer>{
+
+public class Token {
+    private final int token1;
+    private final int token2;
+
     public Token(int token1, int token2) {
-        this.setToken1(token1);
-        this.setToken2(token2);
+        this.token1 = token1;
+        this.token2 = token2;
+    }
+
+    public int getToken1() {
+        return token1;
+    }
+
+    public int getToken2() {
+        return token2;
     }
 
     @Override
     public String toString() {
-        return this.getToken1() + " " + this.getToken2();
+        return "(" + token1 + ", " + token2 + ")";
     }
+
+ 
 }
+

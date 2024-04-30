@@ -1,47 +1,38 @@
+package com.mycompany.lab8;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.lab8;
+import com.zaxxer.hikari.HikariDataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 /**
  *
  * @author danis
  */
 public class DatabaseConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/lab8";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
-    private static Connection connection = null;
+    private static HikariDataSource dataSource;
 
-   
-
-    public static Connection getConnection() {
-        if (connection == null) {
-            createConnection();
-        }
-        return connection;
+    static {
+        dataSource = new HikariDataSource();
+        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/lab8");
+        dataSource.setUsername("root");
+        dataSource.setPassword("");
+        dataSource.setMaximumPoolSize(10);
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
     }
 
-    private static void createConnection() {
-        try {
-            connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            connection.setAutoCommit(false);
-        } catch (SQLException e) {
-            System.err.println(e);
-        }
+    public static Connection getConnection() throws SQLException {
+        return dataSource.getConnection();
     }
 
-    public static void closeConnection() {
+    public static void closeConnection(Connection connection) {
         if (connection != null) {
             try {
                 connection.close();
             } catch (SQLException e) {
-                System.err.println(e);
+                System.err.println("Error closing connection: " + e.getMessage());
             }
         }
     }

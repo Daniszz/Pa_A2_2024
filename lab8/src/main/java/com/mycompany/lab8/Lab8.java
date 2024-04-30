@@ -7,6 +7,7 @@ package com.mycompany.lab8;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
@@ -16,17 +17,17 @@ import java.sql.Statement;
 public class Lab8 {
 
     public static void main(String[] args) {
-  try {
+        try {
             AuthorDAO authorDAO = new AuthorDAO();
-            authorDAO.addAuthor("J.K. Rowling");
+            authorDAO.addAuthor(new Author(0, "J.K. Rowling"));
+            System.out.println("Author added successfully!");
 
-            Statement statement = DatabaseConnection.getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM authors");
-            while (resultSet.next()) {
-                System.out.println(resultSet.getInt(1) + " " + resultSet.getString(2));
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+            BookDAO bookDAO = new BookDAO();
+            java.sql.Date date = java.sql.Date.valueOf("2021-01-01");
+            bookDAO.addBook(new Book(0, "Harry Potter and the Philosopher's Stone", 1, "English", date, 330));
+            System.out.println("Book added successfully!");
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        }
+    }
 }

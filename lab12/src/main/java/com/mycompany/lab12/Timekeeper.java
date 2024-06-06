@@ -4,6 +4,8 @@
  */
 package com.mycompany.lab12;
 
+import org.junit.Test;
+
 /**
  *
  * @author danis
